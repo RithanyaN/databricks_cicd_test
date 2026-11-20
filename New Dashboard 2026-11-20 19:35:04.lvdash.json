@@ -1,0 +1,109 @@
+{
+  "datasets": [
+    {
+      "name": "3d574fb4",
+      "displayName": "sales_suppliers",
+      "config": {
+        "version": "1.1",
+        "source": "samples.bakehouse.sales_suppliers",
+        "dimensions": [
+          {
+            "expr": "source.*"
+          }
+        ],
+        "measures": [
+          {
+            "name": "count",
+            "expr": "COUNT(*)",
+            "comment": "Represents the total number of rows in the dataset. Use this measure to count all",
+            "displayName": "Count"
+          }
+        ]
+      }
+    }
+  ],
+  "pages": [
+    {
+      "name": "9ec74a21",
+      "displayName": "Test",
+      "layout": [
+        {
+          "widget": {
+            "name": "59aa1352",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "3d574fb4",
+                  "fields": [
+                    {
+                      "name": "supplierID",
+                      "expression": "`supplierID`"
+                    },
+                    {
+                      "name": "approved",
+                      "expression": "`approved`"
+                    },
+                    {
+                      "name": "city",
+                      "expression": "`city`"
+                    },
+                    {
+                      "name": "continent",
+                      "expression": "`continent`"
+                    },
+                    {
+                      "name": "district",
+                      "expression": "`district`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "supplierID"
+                  },
+                  {
+                    "fieldName": "approved"
+                  },
+                  {
+                    "fieldName": "city"
+                  },
+                  {
+                    "fieldName": "continent"
+                  },
+                  {
+                    "fieldName": "district"
+                  }
+                ]
+              },
+              "data": {
+                "queryName": "main_query"
+              }
+            }
+          },
+          "position": {
+            "x": 1,
+            "y": 0,
+            "width": 11,
+            "height": 7
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS",
+      "layoutVersion": "GRID_V1"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    },
+    "applyModeEnabled": false
+  }
+}
