@@ -4,8 +4,6 @@
       "name": "3d574fb4",
       "displayName": "sales_suppliers",
       "config": {
-        "version": "1.1",
-        "source": "samples.bakehouse.sales_suppliers",
         "dimensions": [
           {
             "expr": "source.*"
@@ -13,12 +11,14 @@
         ],
         "measures": [
           {
-            "name": "count",
-            "expr": "COUNT(*)",
             "comment": "Represents the total number of rows in the dataset. Use this measure to count all",
-            "displayName": "Count"
+            "displayName": "Count",
+            "expr": "COUNT(*)",
+            "name": "count"
           }
-        ]
+        ],
+        "source": "samples.bakehouse.sales_suppliers",
+        "version": "1.1"
       }
     }
   ],
@@ -62,8 +62,9 @@
               }
             ],
             "spec": {
-              "version": 2,
-              "widgetType": "table",
+              "data": {
+                "queryName": "main_query"
+              },
               "encodings": {
                 "columns": [
                   {
@@ -83,9 +84,8 @@
                   }
                 ]
               },
-              "data": {
-                "queryName": "main_query"
-              }
+              "version": 2,
+              "widgetType": "table"
             }
           },
           "position": {
